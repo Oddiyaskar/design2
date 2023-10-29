@@ -1,0 +1,121 @@
+.header {
+    margin-top: 20px;
+
+    .container {
+        @include Flex;
+    }
+}
+
+.nav {
+    display: flex;
+    gap: 60px;
+}
+
+.nav__link {
+    @include Link;
+}
+
+.header__link--btn {
+    @include Btn;
+}
+
+.header__info {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    border: none;
+    background-color: #fff;
+    display: none;
+}
+
+.menu {
+    display: none;
+}
+
+.exit {
+    display: none;
+}
+
+.nav__btn {
+    display: none;
+}
+
+
+@media only screen and (max-width:760px) {
+    .nav {
+        display: none;
+    }
+
+    .btn {
+        display: block;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .menu__exit {
+        display: none;
+    }
+
+    .exit__menu {
+        display: block;
+    }
+
+    .nav__blok {
+        display: block;
+        right: -50px;
+        position: absolute;
+        background-color: yellow;
+        height: 450px;
+        width: 250px;
+        top: 65px;
+        left: 0px;
+        border-radius: 8px;
+        text-align: center;
+        animation: navblok  0.5s ease;
+
+        & > li {
+            line-height: 60px;
+            transform: translateY(50px);
+        }
+
+
+        & > li > a {
+            margin-right: 40px;
+            font-size: 20px;
+            color: #FFF;
+        }
+
+
+        @keyframes navblok {
+            from {
+                transform: translateX(-70%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1; 
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .header__link--btn {
+        display: none;
+    }
+
+    .nav__btn {
+        display: block;
+        background: #FFF;
+        color: black;
+        margin-right: 30px;
+        margin-top: 60px;
+        white-space: nowrap;
+        padding: 10px 16px;
+    }
+}
